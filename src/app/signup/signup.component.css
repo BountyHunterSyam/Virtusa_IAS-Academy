@@ -40,4 +40,7 @@ button {
     cursor: pointer;
     background-color: rgb(41, 4, 164);
   }
+  a{
+    text-decoration: none;
+  }
       
