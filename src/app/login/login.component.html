@@ -1,1 +1,27 @@
-<p>login works!</p>
+<body>
+    <div class="login_component">
+        <form class="form_container">
+            <h1>Login</h1>
+            <label for="email"><b>Email</b></label>
+            <input
+            type="email"
+               id="email"
+               
+               placeholder="Enter Email"
+               required
+               >
+               <label for="password"><b>Password</b></label>
+               <input
+               type="password"
+                  id="password"
+                  placeholder="Enter Password"
+                  required
+                  >
+                  <button id="login" type="submit">Login</button>
+                  <div>
+                    <p>New User or Admin? <a routerLink="/signup">signup</a>.</p>
+                  </div>
+        </form>
+    </div>
+    
+</body>
