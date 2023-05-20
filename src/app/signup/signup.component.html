@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp</title>
-</head>
 <body >
-    <form>
-        <!-- class named "container" is assigned to div -->
+    <form (ngSubmit)="formSubmit()" class="form_container" >
         <div class="container">
           <h1>Register</h1>
         
@@ -23,7 +14,8 @@
          
           <label for="email"><b>Email</b></label>
           <input
-            type="text"
+            [(ngModel)]="user.email"
+            type="email"
             placeholder="Enter Email"
             name="email"
             id="email"
@@ -32,6 +24,7 @@
           <label for="username"><b>Username</b></label>
           <input
             type="text"
+            [(ngModel)]="user.username"
             placeholder="Enter username"
             name="username"
             id="username"
@@ -40,6 +33,7 @@
           <label for="mobileNumber"><b>Mobile Number</b></label>
           <input
             type="tel"
+            [(ngModel)]="user.mobileNumber"
             placeholder="Enter Mobile Number"
             name="mobileNumber"
             id="mobileNumber"
@@ -50,6 +44,7 @@
           <label for="pwd"><b>Password</b></label>
           <input
             type="password"
+            [(ngModel)]="user.password"
             placeholder="Enter Password"
             name="pwd"
             id="password"
@@ -59,6 +54,7 @@
           <label for="confirmPassword"><b>Confirm Password</b></label>
           <input
             type="password"
+            [(ngModel)]="user.confirmPassword"
             placeholder="Confirm Password"
             name="confirmPassword"
             id="confirmPassword"
@@ -69,10 +65,9 @@
         </div>
   
         <div>
-          <p>Already have an account? <a href="#">Log in</a>.</p>
+          <p>Already have an account? <a routerLink="/login">Log in</a>.</p>
         </div>
       </form>
   
     
 </body>
-</html>
