@@ -1,0 +1,40 @@
+import sys
+import webbrowser
+from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton
+
+# List of websites
+websites = {
+    "Google": "https://www.google.com",
+    "YouTube": "https://www.youtube.com",
+    "GitHub": "https://www.github.com",
+    "Stack Overflow": "https://stackoverflow.com",
+    "Reddit": "https://www.reddit.com"
+}
+
+class WebOpenerApp(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        self.setWindowTitle("Website Launcher")
+        self.setGeometry(100, 100, 300, 200)
+
+        layout = QVBoxLayout()
+
+        # Create buttons dynamically from website list
+        for name, url in websites.items():
+            btn = QPushButton(name, self)
+            btn.clicked.connect(lambda _, u=url: self.open_website(u))
+            layout.addWidget(btn)
+
+        self.setLayout(layout)
+
+    def open_website(self, url):
+        webbrowser.open(url)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = WebOpenerApp()
+    window.show()
+    sys.exit(app.exec())
